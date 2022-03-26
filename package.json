@@ -4,8 +4,8 @@
     "chromium-args": "--force-color-profile=srgb",
     "window": {
         "title": "Soul Legacy",
-        "width": 816,
-        "height": 624,
+        "width": 1280,
+        "height": 900,
         "position": "center",
         "icon": "icon/icon.png"
     }

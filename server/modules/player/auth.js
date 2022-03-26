@@ -44,7 +44,7 @@ exports.initialize = function() {
             MMO_Core["database"].findUser(data, async (output) => {
               // If user exist
               if(output[0] !== undefined) {
-                return loginError(client, "Cannot create this account."); // Avoid telling that username is taken !
+                return loginError(client, "Cannot create this account. Try a different one."); // Avoid telling that username is taken !
               }
       
               // If user doesn't exist
