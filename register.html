@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" href="icon/icon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="./register.css">
-  <title>S'inscrire - Naire Online</title>
+  <title>Soul Legacy Online</title>
 </head>
 <body style="margin:0;padding:0;">
   <div class="overlay"></div>
@@ -100,7 +100,7 @@
     };
     
     const register = (username,password) => {
-      const domain = 'http://64.227.9.31:8097'; // TODO : Set your own server (domain name + port, ex : http://mynew.mmo:8097/ )
+      const domain = 'http://localhost:8097'; // TODO : Set your own server (domain name + port, ex : http://mynew.mmo:8097/ )
       const socket = io.connect(domain);
       // Setting up UI behavior : 
       socket.on('login_error', (data,callback) => { // Display UI error when server returns any
