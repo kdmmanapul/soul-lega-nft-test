@@ -71,8 +71,8 @@ function LoginForm() {
     <div id="LoginForm" 
         style="
             position: fixed; 
-            top: 50vh; 
-            left: 50vw; 
+            top: 70vh; 
+            left: 70vw; 
             background-color: rgba(0, 0, 0, 0.4); 
             border-radius: 8px; 
             margin: 0 auto; 
@@ -84,15 +84,15 @@ function LoginForm() {
     >
         <div>
 
-            <div style="margin-bottom: 16px;">
-                <input id="inputUsername" type="text" placeholder="Username" class="login-input"
+            <div style="margin-bottom: 10px; margin-top: 16px">
+                <input id="inputUsername" type="text" placeholder="Username" class="login-input" autocomplete="off"
                     style="
                         display: block; 
                         margin: 0 auto 8px auto; 
                         font-size: 24px;
                     "
                 />
-                <input id="inputPassword" type="password" placeholder="Password" class="login-input"
+                <input id="inputPassword" type="password" placeholder="Password" class="login-input" autocomplete="off"
                     style="
                         display: block; 
                         margin: 0 auto; 
@@ -104,7 +104,7 @@ function LoginForm() {
             <div id="loginErrBox" 
                 style="
                     display: block; 
-                    margin: 0 auto 16px auto; 
+                    margin: 0 auto 0 auto; 
                     text-align: center; 
                     width: 100%; 
                     font-family: Comic Sans, arial; 
@@ -112,20 +112,40 @@ function LoginForm() {
                 "
             ></div>
 
-            <button id="btnConnect" 
+            <div style="display: flex; padding: 10px; justify-content: center;">
+              <div style="
+                  display: block; 
+                  margin: 5px; 
+                  border: 0; 
+                  border-radius: 4px; 
+                  // padding: 8px; 
+                  font-size: 24px;
+                  background-color: rgba(0, 0, 0, 0.5);
+                  width: 120px;
+                  text-align: center;
+              "
+              >
+                <a style="color: white; text-decoration: none;" href="./register.html" target="_blank">
+                  Sign up
+                </a>
+              </div>
+              <button id="btnConnect" 
                 style="
                     display: block; 
-                    margin: 0 auto; 
+                    margin: 5px; 
                     border: 0; 
                     border-radius: 4px; 
-                    padding: 8px; 
+                    // padding: 8px; 
                     font-size: 24px;
+                    background-color: rgba(0, 0, 0, 0.5);;
+                    color: white;
+                    width: 120px;
                 "
               >
-                  Play
+                  Login
               </button>
+            </div>
         </div>
-        <div style="text-align: center; margin-top: 8px;"><a style="color: white;" href="./register.html" target="_blank">Sign up</a></div>
     </div>
     `;
 

@@ -1,48 +1,48 @@
-﻿Wall A (Stone)|壁A（石）
-Wall B (Castle)|壁B（城）
-Wall C (Fort)|壁C（砦）
-Wall D (Stone)|壁D（石）
-Wall E (Stone)|壁E（石）
-Wall F (Brick)|壁F（レンガ）
-Wall G (Stone)|壁G（石）
-Interior Wall A (Stone)|内装壁A（石）
-Wall A (Stone)|壁A（石）
-Wall B (Castle)|壁B（城）
-Wall C (Fort)|壁C（砦）
-Wall D (Stone)|壁D（石）
-Wall E (Stone)|壁E（石）
-Wall F (Brick)|壁F（レンガ）
-Wall G (Stone)|壁G（石）
-Interior Wall A (Stone)|内装壁A（石）
-Wall H (Wood)|壁H（木造）
-Wall I (Log)|壁I（丸太）
-Wall J (Wood)|壁J（木造）
-Interior Wall B (Plaster)|内装壁B（石膏壁）
-Interior Wall C (Plaster)|内装壁C（石膏壁）
-Wall K (Stone)|壁K（石）
-Wall L (Marble)|壁L（大理石）
-Wall M (Marble)|壁M（大理石）
-Wall H (Wood)|壁H（木造）
-Wall I (Log)|壁I（丸太）
-Wall J (Wood)|壁J（木造）
-Interior Wall B (Plaster)|内装壁B（石膏壁）
-Interior Wall C (Plaster)|内装壁C（石膏壁）
-Wall K (Stone)|壁K（石）
-Wall L (Marble)|壁L（大理石）
-Wall M (Marble)|壁M（大理石）
-Interior Wall D (Desert)|内装壁D（砂漠風）
-Interior Wall E (Desert)|内装壁E（砂漠風）
-Interior Wall F (Mansion)|内装壁F（豪邸）
-Interior Wall G (Mansion)|内装壁G（豪邸）
-Wall N (Tent)|壁N（テント）
-Wall O (Demon Castle)|壁O（魔王城）
-Wall P (Gold)|壁P（黄金）
-Wall Q (Ice)|壁Q（氷）
-Interior Wall D (Desert)|内装壁D（砂漠風）
-Interior Wall E (Desert)|内装壁E（砂漠風）
-Interior Wall F (Mansion)|内装壁F（豪邸）
-Interior Wall G (Mansion)|内装壁G（豪邸）
-Wall N (Tent)|壁N（テント）
-Wall O (Demon Castle)|壁O（魔王城）
-Wall P (Gold)|壁P（黄金）
-Wall Q (Ice)|壁Q（氷）
+﻿A4,0,0
+A4,1,0
+A4,2,0
+A4,3,0
+A4,4,0
+A4,5,0
+A4,6,0
+A4,7,0
+A4,0,1
+A4,1,1
+A4,2,1
+A4,3,1
+A4,4,1
+A4,5,1
+A4,6,1
+A4,7,1
+A4,0,2
+A4,1,2
+A4,2,2
+A4,3,2
+A4,4,2
+A4,5,2
+A4,6,2
+A4,7,2
+A4,0,3
+A4,1,3
+A4,2,3
+A4,3,3
+A4,4,3
+A4,5,3
+A4,6,3
+A4,7,3
+A4,0,4
+A4,1,4
+A4,2,4
+A4,3,4
+A4,4,4
+A4,5,4
+A4,6,4
+A4,7,4
+A4,0,5
+A4,1,5
+A4,2,5
+A4,3,5
+A4,4,5
+A4,5,5
+A4,6,5
+A4,7,5
