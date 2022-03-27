@@ -4,7 +4,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
-const server = require("http").createServer(app);
+// Private Keys for SSL
+var privateKey = fs.ReadFileSync('./certs/privkey.pem').toString();
+var certificate = fs.ReadFileSync('./certs/fullchain.pem').toString();
+
+const server = require("https").createServer({
+    key: privateKey,
+    cert: certificate,
+},app);
+
+// const server = require("http").createServer(app);
 const io = require("socket.io").listen(server, { log: false });
 
 /*****************************
@@ -26,12 +35,6 @@ app.use(function(req, res, next) { // CORS (read : https://developer.mozilla.org
 });
 
 app.use("/data", express.static(path.join(__dirname, "..", "data")));
-
-console.log("######################################");
-console.log("# MMORPG Maker MV - Samuel Lespes Cardillo");
-console.log("# MMORPG Maker MZ - Axel Andaroth");
-console.log("# Check GitHub for updates");
-console.log("######################################");
 
 // CORE INTEGRATIONS
 // eslint-disable-next-line
