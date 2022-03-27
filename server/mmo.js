@@ -6,8 +6,8 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
 // Private Keys for SSL
-var privateKey = fs.ReadFileSync('./certs/privkey.pem').toString();
-var certificate = fs.ReadFileSync('./certs/fullchain.pem').toString();
+var privateKey = fs.readFileSync('./certs/privkey.pem').toString();
+var certificate = fs.readFileSync('./certs/fullchain.pem').toString();
 
 const server = require("https").createServer({
     key: privateKey,
