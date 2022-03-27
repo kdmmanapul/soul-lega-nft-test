@@ -25,7 +25,7 @@ var $plugins =
 {"name":"--------------------------","status":false,"description":"---------------------------------------------------------------------","parameters":{}},
 {"name":"OrangeCustomEvents","status":true,"description":"This plugin Will let you add or copy events to the current map","parameters":{}},
 {"name":"MMO_OrangeCustomEventCreator","status":true,"description":"This plugin Will let you create virtual events with script calls","parameters":{}},
-{"name":"MMO_Core","status":true,"description":"MMORPG Maker MV - Core","parameters":{"Server Location":"http://167.71.251.252:8097/"}},
+{"name":"MMO_Core","status":true,"description":"MMORPG Maker MV - Core","parameters":{"Server Location":"https://167.71.251.252:8097/"}},
 {"name":"MMO_ServerSideMaps","status":true,"description":"MMORPG Maker MV - Server Side Maps","parameters":{}},
 {"name":"MMO_Core_Player","status":true,"description":"MMORPG Maker MV - Core Handling Player","parameters":{"Mouse Movements":"true","Use Native Respawn":"false"}},
 {"name":"MMO_Core_Players","status":true,"description":"MMORPG Maker MV - Core Handling Players","parameters":{}},
