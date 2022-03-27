@@ -1,6 +1,7 @@
 /* global MMO_Core */
 require("dotenv").config();
 const express = require("express");
+const fs = require('fs');
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
