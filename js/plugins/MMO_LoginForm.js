@@ -263,13 +263,13 @@ function LoginForm() {
   LoginForm.prototype.createBackground = function() {
       this._backSprite1 = new Sprite(ImageManager.loadTitle1($dataSystem.title1Name));
       this._backSprite2 = new Sprite(ImageManager.loadTitle2($dataSystem.title2Name));
-      this.addWindow(this._backSprite1);
-      this.addWindow(this._backSprite2);
+      this.addChild(this._backSprite1);
+      this.addChild(this._backSprite2);
   };
 
   LoginForm.prototype.createForeground = function() {
       this._gameTitleSprite = new Sprite(new Bitmap(Graphics.width, Graphics.height));
-      this.addWindow(this._gameTitleSprite);
+      this.addChild(this._gameTitleSprite);
       if ($dataSystem.optDrawTitle) {
           this.drawGameTitle();
       }
