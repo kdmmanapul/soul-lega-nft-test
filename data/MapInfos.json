@@ -1,15 +1,16 @@
 [
 null,
-{"id":1,"expanded":true,"name":"MapIslandOfSky","order":2,"parentId":0,"scrollX":1530,"scrollY":845},
-{"id":2,"expanded":true,"name":"MapWhitelistMap","order":3,"parentId":1,"scrollX":927.5999999999999,"scrollY":657},
-{"id":3,"expanded":true,"name":"PlayerHub","order":5,"parentId":0,"scrollX":3060,"scrollY":1722},
+{"id":1,"expanded":true,"name":"MapIslandOfSky","order":2,"parentId":0,"scrollX":1020,"scrollY":844.6666666666666},
+{"id":2,"expanded":true,"name":"MapWhitelistMap","order":3,"parentId":1,"scrollX":1020,"scrollY":656.6666666666666},
+{"id":3,"expanded":true,"name":"PlayerHub","order":5,"parentId":0,"scrollX":2732,"scrollY":2721},
 {"id":4,"expanded":true,"name":"PlayerHub-WIP","order":4,"parentId":0,"scrollX":3270.8571428571427,"scrollY":2056.285714285714},
 {"id":5,"expanded":false,"name":"Forest","order":8,"parentId":3,"scrollX":1530,"scrollY":845},
-{"id":6,"expanded":true,"name":"Cave","order":6,"parentId":3,"scrollX":1530,"scrollY":845},
+{"id":6,"expanded":true,"name":"Cave","order":6,"parentId":3,"scrollX":1020,"scrollY":574},
 {"id":7,"expanded":false,"name":"Cave2","order":7,"parentId":6,"scrollX":680,"scrollY":584.4444444444445},
 {"id":8,"expanded":false,"name":"Shop","order":9,"parentId":3,"scrollX":1530,"scrollY":845},
 {"id":9,"expanded":false,"name":"Spawner Map","order":1,"parentId":0,"scrollX":1020,"scrollY":574},
-{"id":10,"expanded":true,"name":"Home","order":10,"parentId":3,"scrollX":2295,"scrollY":1267.5},
+{"id":10,"expanded":true,"name":"Home","order":10,"parentId":3,"scrollX":1020,"scrollY":574},
 {"id":11,"expanded":false,"name":"ChangeActor","order":11,"parentId":10,"scrollX":1311.4285714285713,"scrollY":724.2857142857142},
-{"id":12,"expanded":false,"name":"HedgeMaze","order":12,"parentId":3,"scrollX":1147.5,"scrollY":794.25}
+{"id":12,"expanded":false,"name":"HedgeMaze","order":13,"parentId":3,"scrollX":1530,"scrollY":845},
+{"id":13,"expanded":false,"name":"OnboardingTutorial","order":12,"parentId":10,"scrollX":1530,"scrollY":845}
 ]
