@@ -72,11 +72,11 @@ function LoginForm() {
         style="
             position: fixed; 
             top: 70vh; 
-            left: 70vw; 
-            background-color: rgba(0, 0, 0, 0.4); 
+            left: 75vw; 
+            background-color: rgba(0, 0, 0, 0); 
             border-radius: 8px; 
             margin: 0 auto; 
-            width: 400px; 
+            width: 350px; 
             padding: 8px; 
             transform: translate(-50%, 0);
             z-index: 999999999999999; /* yep it's a lot but eh */ 
@@ -90,6 +90,9 @@ function LoginForm() {
                         display: block; 
                         margin: 0 auto 8px auto; 
                         font-size: 24px;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        color: white;
+                        padding: 5px;
                     "
                 />
                 <input id="inputPassword" type="password" placeholder="Password" class="login-input" autocomplete="off"
@@ -97,6 +100,9 @@ function LoginForm() {
                         display: block; 
                         margin: 0 auto; 
                         font-size: 24px;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        color: white;
+                        padding: 5px;
                     "
                 />
             </div>
@@ -117,8 +123,8 @@ function LoginForm() {
                   display: block; 
                   margin: 5px; 
                   border: 0; 
-                  border-radius: 4px; 
-                  // padding: 8px; 
+                  border-radius: 10px; 
+                  padding: 8px; 
                   font-size: 24px;
                   background-color: rgba(0, 0, 0, 0.5);
                   width: 120px;
@@ -134,9 +140,9 @@ function LoginForm() {
                     display: block; 
                     margin: 5px; 
                     border: 0; 
-                    border-radius: 4px; 
-                    // padding: 8px; 
-                    font-size: 24px;
+                    border-radius: 10px; 
+                    padding: 8px; 
+                    font-size: 22px;
                     background-color: rgba(0, 0, 0, 0.5);;
                     color: white;
                     width: 120px;
