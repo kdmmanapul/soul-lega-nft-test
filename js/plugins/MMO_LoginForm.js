@@ -71,8 +71,8 @@ function LoginForm() {
     <div id="LoginForm" 
         style="
             position: fixed; 
-            top: 70vh; 
-            left: 75vw; 
+            top: 45vh; 
+            left: 50vw; 
             background-color: rgba(0, 0, 0, 0); 
             border-radius: 8px; 
             margin: 0 auto; 
