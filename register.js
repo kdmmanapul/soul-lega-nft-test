@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <form class="col s12">
             <div class="row">
               <div class="input-field col s6">
-                <input id="username" type="text" class="validate" disabled>
+                <input id="username" value=${contract.defaultAccount.substring(0,10)}  type="text" class="validate" disabled>
               </div>
               <div class="input-field col s6">
                 <input id="password" type="password" class="validate">
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div id="serverResponseZone" style="color: red; margin:8px; text-align: center;" class="row"></div>
         `
+        
     } else {
         content = `<p>You need atleast 1 Soul Legacy Legends NFT to make an account.</p>`
     }
