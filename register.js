@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const web3 = new Web3(window.ethereum)
 
   document.getElementById("load_button").addEventListener("click", async () => {
-    const contract = new web3.eth.Contract(SoulLegacyTokenABI, "0xd7A1358066C4d20C56Cb4f31C3d0bC516218bE59")
+    const contract = new web3.eth.Contract(SoulLegacyTokenABI, "0x9E9E4a52E25774Cb9d234170A5A5c3d7Af387a12")
     const walletAddress = document.getElementById("wallet_address").innerText
     contract.defaultAccount = walletAddress
     const sLegacyLegendBalance = await contract.methods.balanceOf(walletAddress).call()
