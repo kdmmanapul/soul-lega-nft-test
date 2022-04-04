@@ -1,5 +1,5 @@
 {
-    "name": "soullegacy-game",
+    "name": "rmmz-game",
     "main": "index.html",
     "chromium-args": "--force-color-profile=srgb",
     "window": {
@@ -8,22 +8,5 @@
         "height": 900,
         "position": "center",
         "icon": "icon/icon.png"
-    },
-    "scripts": {
-        "deploy": "./deploy.sh",
-        "lint": "eslint . --ext js,json",
-        "lint:fix": "eslint . --fix --ext js,json",
-        "serve": "static-server . --port 9011",
-        "test": "yarn lint"
-    },
-    "dependencies": {
-        "@metamask/onboarding": "^1.0.1"
-      },
-      "devDependencies": {
-        "@metamask/eslint-config": "^2.0.0",
-        "eslint": "^6.8.0",
-        "eslint-plugin-import": "^2.20.1",
-        "eslint-plugin-json": "^2.0.1",
-        "static-server": "^2.2.1"
     }
 }
