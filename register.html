@@ -7,9 +7,6 @@
   <link rel="apple-touch-icon" href="icon/icon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="./register.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet">
   <title>Soul Legacy Online</title>
 </head>
 <body style="margin:0;padding:0;">
@@ -19,82 +16,50 @@
     
       <div class="col s12" style="float: none; margin: 0 auto; box-sizing: border-box;">
         <div class="card" style="margin: 0;">
-          <!-- <div class="card-image">
-            <div style="width: 100%; height: 150px; overflow: hidden;">
+          <div class="card-image">
+            <div style="width: 100%; height: 200px; overflow: hidden;">
               <img src="./img/parallaxes/TwitterBanner.png">
             </div>
-          </div> -->
-          <div class="card-content" style="padding-bottom: 4px; width: 1000px;">
+            <h1 class="card-title black-text" style="text-align: center; width: 100%;">Sign up</h1>
+          </div>
+          <div class="card-content" style="padding-bottom: 4px;">
             <div id="instructionsZone" class="row">
               <div class="col s12">
-                <div style="text-align: left;">
-                  <!-- <p>You can register for an account to play the demo if you have a Soul Legacy NFT or an OG role in discord. </p>
-                  <p>1. Connect your Wallet</p>
-                  <p>2. Load Soul Legacy NFTs</p>
-                  <p>3. Register Account</p> -->
-                  <h2>Coming Soon...</h2>
-                </div>
+                <ol>
+                  <li id="allfieldsrequired" style="color: black;">All fields are required</li>
+                  <li id="usernameformat" style="color: black;">Username must be alphanumeric</li>
+                </ol>
               </div>
             </div>
-            <!-- START -->
-            <!-- <main class="p-10 flex justify-center min-h-full container">
-              <div style="justify-content: center; display: flex; margin-bottom: 30px;">
-                <button id="enableEthereumButton" style="width: 200px;" class="btn waves-effect waves-light">Connect Wallet</button>
-                <h2>Account: <span id="wallet_address" class="showAccount"></span></h2>
-              </div>
-              
-              <div class="w-4/5">
-                <div class="mb-10" style="justify-content: center; text-align: center;">
-                  <button id="load_button"  class="border-2 border-blue-500 bg-blue-700 text-white transition-colors px-4 outline-none py-1 uppercase rounded-md text-xl font-semibold">
-                    Load Soul Legacy Legends NFTs
-                  </button>
-                </div>
-          
-                <div id="nfts" class="flex gap-7 flex-wrap"></div>
-                <p id="total-balance" style="margin-top: 1rem;"></p>
-              </div>
-              <template id="nft_template">
-                <section>
-                  <p class="font-bold bg-yellow-500 text-white text-center rounded-t-md"></p>
-            
-                  <a href="" target="_blank">
-                    <img style="width: 120px; height: 120px; margin: 5;" src="" alt="">>
-                  </a>
-                </section>
-              </template>
-            </main> -->
-            <!-- STOP -->
-            <div id="formRegister">
-              <!-- <li id="allfieldsrequired" style="color: black;">All fields are required</li>
-              <li id="usernameformat" style="color: black;">Username will be the first 10 digits of your Wallet's Address </li>
-              <div id="inputsZone" class="row">
-                <form class="col s12">
-                  <div class="row">
-                    <div class="input-field col s6">
-                      <input id="username" type="text" class="validate" disabled>
-                    </div>
-                    <div class="input-field col s6">
-                      <input id="password" type="password" class="validate">
-                      <label for="password">Password</label>
-                    </div>
+            <div id="inputsZone" class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input id="username" type="text" class="validate">
+                    <label for="username">Username</label>
                   </div>
-                </form>
-              </div>
-              <div id="serverResponseZone" style="color: red; margin:8px; text-align: center;" class="row"></div> -->
+                  <div class="input-field col s6">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                  </div>
+                </div>
+              </form>
             </div>
+            <div id="serverResponseZone" style="color: red; margin:8px; text-align: center;" class="row"></div>
           </div>
-          
-          <!-- <div class="card-action">
+          <div class="card-action">
             <div class="row" style="margin:0;">
               <div class="col xs12 m6">
                 <a onclick="window.close()" class="blue-text" style="cursor:pointer; line-height: 36px;">Close</a>
               </div>
               <div class="col xs12 m6" style="text-align: right;">
                 <button type="button" onclick="location.href='https://discord.gg/soullegacy'" class="btn waves-effect waves-light">Discord</button>
+              </div>
+              <div class="col xs12 m6" style="text-align: right;">
                 <button id="registerBtn" disabled="true" class="btn waves-effect waves-light">Register</button>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -176,26 +141,5 @@
 
     init();
   </script>
-  <!-- Metamask Integration -->
-  <script>
-    const ethereumButton = document.getElementById('enableEthereumButton');
-    const showAccount = document.querySelector('.showAccount');
-    const user = document.getElementById('username');
-    ethereumButton.addEventListener('click', () => {
-      //Will Start the metamask extension
-      getAccount();
-      document.getElementById('enableEthereumButton').style.display = 'none';
-    });
-    async function getAccount() {
-      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-      const account = accounts[0];
-      showAccount.innerHTML = account;
-      user.value = account.substring(0,10);
-    }
-  </script>
-
-  <script src="node_modules/@metamask/onboarding/dist/metamask-onboarding.bundle.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"></script>
-  <script type="module" src="register.js"></script>
 </body>
 </html>
