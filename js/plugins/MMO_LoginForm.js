@@ -131,6 +131,22 @@ function LoginForm() {
                   text-align: center;
               "
               >
+                <a style="color: white; text-decoration: none;" href="https://mint.soullegacy.online" target="_blank">
+                  Mint
+                </a>
+              </div>
+              <div style="
+                  display: block; 
+                  margin: 5px; 
+                  border: 0; 
+                  border-radius: 10px; 
+                  padding: 8px; 
+                  font-size: 24px;
+                  background-color: rgba(0, 0, 0, 0.5);
+                  width: 120px;
+                  text-align: center;
+              "
+              >
                 <a style="color: white; text-decoration: none;" href="./register.html" target="_blank">
                   Sign up
                 </a>
