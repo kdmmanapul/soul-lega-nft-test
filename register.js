@@ -44,15 +44,15 @@ document.addEventListener("DOMContentLoaded", () => {
       let tokenMetadataURI = await contract.methods.tokenURI(tokenId[i]).call()
       
       if (tokenMetadataURI.startsWith("ipfs://")) {
-        tokenMetadataURI = `https://gateway.pinata.cloud/ipfs/${tokenMetadataURI.split("ipfs://")[1]}`
+        tokenMetadataURI = `https://soullegacy.mypinata.cloud/ipfs/${tokenMetadataURI.split("ipfs://")[1]}`
       }
       
       const tokenMetadata = await fetch(tokenMetadataURI).then((response) => response.json())
       const sLegacyLegendTokenElement = document.getElementById("nft_template").content.cloneNode(true)
       sLegacyLegendTokenElement.querySelector("p").innerText = tokenMetadata["name"]
-      sLegacyLegendTokenElement.querySelector("a").href = `https://opensea.io/assets/0x45db714f24f5a313569c41683047f1d49e78ba07/${tokenId}`
+      sLegacyLegendTokenElement.querySelector("a").href = `https://opensea.io/assets/0x9e9e4a52e25774cb9d234170a5a5c3d7af387a12/${tokenId[i]}`
     //   sLegacyLegendTokenElement.querySelector("img").src = tokenMetadata["image"]
-      sLegacyLegendTokenElement.querySelector("img").src = `https://gateway.pinata.cloud/${tokenMetadata["image"].split("ipfs://")[1]}`
+      sLegacyLegendTokenElement.querySelector("img").src = `https://soullegacy.mypinata.cloud/ipfs/${tokenMetadata["image"].split("ipfs://")[1]}`
       sLegacyLegendTokenElement.querySelector("img").alt = tokenMetadata["description"]
 
       document.getElementById("nfts").append(sLegacyLegendTokenElement)
