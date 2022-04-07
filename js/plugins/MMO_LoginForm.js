@@ -167,6 +167,23 @@ function LoginForm() {
                   Login
               </button>
             </div>
+            <div style="display: flex; padding: 10px; justify-content: center;">
+              <button id="btnGuestConnect" 
+                style="
+                    display: block; 
+                    margin: 5px; 
+                    border: 0; 
+                    border-radius: 10px; 
+                    padding: 8px; 
+                    font-size: 22px;
+                    background-color: rgba(0, 0, 0, 0.5);;
+                    color: white;
+                    width: 280px;
+                "
+              >
+                  Play as Guest
+              </button>
+            </div>
         </div>
     </div>
     `;
@@ -187,6 +204,71 @@ function LoginForm() {
         return false;
       }
     };
+
+    // Register Start For Guest
+    const register = (username,password) => {
+      const domain = 'https://server.soullegacy.online:8097'; // TODO : Set your own server (domain name + port, ex : http://mynew.mmo:8097/ )
+      const socket = io.connect(domain);
+      // Setting up UI behavior : 
+      socket.on('login_error', (data,callback) => { // Display UI error when server returns any
+        if (data) {
+        }
+      });
+      socket.on('register_success', (data,callback) => { // On succes, just display the success msg from backend
+        if (data) {
+          var that = this;
+          let payload = { username: username };
+          payload.password = password;
+      
+          if (payload.username.length < 4 || payload.username.length >= 25) return this.displayError("Invalid username !");
+          if(payload.username.includes(" ")) return this.displayError("No spaces !");
+          if(!payload.username.match(/^(?=[a-zA-Z0-9\s]{2,25}$)(?=[a-zA-Z0-9\s])(?:([\w\s*?])\1?(?!\1))+$/)) return this.displayError("No special characters.");
+      
+          MMO_Core.socket.on("login_success", function(data){
+            if (data.err) return that.displayError("Error : " + data.err);
+            // $("#ErrorPrinter").fadeOut({duration: 1000}).html("");
+            MMO_Core_Player.Player = data["msg"];
+      
+            that.fadeOutAll();
+            DataManager.setupNewGame();
+      
+            document.getElementById('LoginForm').style.display = 'none';
+      
+            SceneManager.goto(Scene_Map);
+            MMO_Core.allowTouch = true;
+            // _requestNativeFullScreen({browserOnly:true});
+            setTimeout(async () => {
+              setTimeout(async () => MMO_Core.socket.emit("new_message", '/count'), 1);
+              MMO_Core.socket.emit("new_message", '/all logged in');
+            }, 1000);
+            return true;
+          });
+      
+          MMO_Core.socket.on("login_error", function(data) {
+            that.displayError(data.msg);      
+          })
+      
+          // If you're no longer connected to socket - retry connection and then continue
+          if (!MMO_Core.socket.connected) {
+            MMO_Core.socket.connect();
+          }
+      
+          MMO_Core.socket.emit("login", payload);
+          // return true;
+        }
+      });
+      // Run the registration, passing username and password as payload. 
+      socket.emit('register', {username, password});
+      
+    };
+    document.getElementById('btnGuestConnect').addEventListener('click', () => {
+      let randomUser = (Math.random() + 1).toString(36).substring(4);
+      let randomPass = (Math.random() + 1).toString(36).substring(4);
+      if (randomUser.length > 3 && randomPass.length > 3) {
+        register(randomUser, randomPass);
+      }
+    });
+    // End Register Start for Guest
 
     //Bind commands
     var that = this;
