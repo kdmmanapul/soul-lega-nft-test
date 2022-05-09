@@ -922,6 +922,7 @@ Scene_Map.prototype.mapNameWindowRect = function() {
 Scene_Map.prototype.createButtons = function() {
     if (ConfigManager.touchUI) {
         this.createMenuButton();
+        // this.createBlockchainScreen();
     }
 };
 

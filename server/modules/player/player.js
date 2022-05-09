@@ -73,7 +73,6 @@ exports.initialize = function() {
             if (client.playerData === undefined) {
                 return;
             }
-
             switch (payload.type) {
                 case "sprite":
                     client.playerData.skin.characterName = payload.characterName;
@@ -88,6 +87,22 @@ exports.initialize = function() {
                     break;
             }
         });
+
+        // Client Update Player Class
+        client.on("player_update_class", function(payload) {
+            if (client.playerDate === undefined) {
+                return;
+            }
+            switch (payload.type) {
+                case "class":
+                    client.playerData.stats.classId = payload.classId;
+                    break;
+                case "skill":
+                    client.playerData.stats.skills = payload.skills;
+                    break;
+            }
+        })
+        // Client Updatre Player Class END
 
         client.on("player_update_busy", function(payload) {
             if (client.playerData === undefined) {
