@@ -375,33 +375,53 @@ function MMO_Core_Player() {
     });
   }
 
-  // MMO_Core_Player.savePlayerClass = function(payload) {
-  //   if(payload.type === "class") {
-  //     MMO_Core_Player.Player["stats"]["classId"] = payload.classId;
-  //   }
+  MMO_Core_Player.savePlayerClass = function(payload) {
+    if(payload.type === "class") {
+      // MMO_Core_Player.Player["stats"]["classId"] = payload.classId;
 
-  //   if($gameActors["_data"][1] === undefined) return;
+      let equips = [];
+      for(var i = 0; i < $gameActors["_data"][1]["_equips"].length; i++) {
+        equips.push($gameActors["_data"][1]["_equips"][i]["_itemId"])
+      }
 
-  //   let equips = [];
-  //   for(var i = 0; i < $gameActors["_data"][1]["_equips"].length; i++) {
-  //     equips.push($gameActors["_data"][1]["_equips"][i]["_itemId"])
-  //   }
+      MMO_Core.socket.emit("player_update_class", {
+        hp: $gameActors["_data"][1]["_hp"],
+        mp: $gameActors["_data"][1]["_mp"],
+        equips: equips,
+        skills: $gameActors["_data"][1]["_skills"],
+        level: $gameActors["_data"][1]["_level"],
+        exp: $gameActors["_data"][1]["_exp"],
+        classId: payload.classId,
+        gold: $gameParty["_gold"],
+        items: $gameParty["_items"],
+        armors: $gameParty["_armors"],
+        weapons: $gameParty["_weapons"]
+      });
+      console.log(MMO_Core_Player.Player["stats"],'stats')
+    }
 
-  //   MMO_Core.socket.emit("player_update_stats", {
-  //     hp: $gameActors["_data"][1]["_hp"],
-  //     mp: $gameActors["_data"][1]["_mp"],
-  //     equips: equips,
-  //     skills: $gameActors["_data"][1]["_skills"],
-  //     level: $gameActors["_data"][1]["_level"],
-  //     exp: $gameActors["_data"][1]["_exp"],
-  //     classId: 2,
-  //     gold: $gameParty["_gold"],
-  //     items: $gameParty["_items"],
-  //     armors: $gameParty["_armors"],
-  //     weapons: $gameParty["_weapons"]
-  //   });
-  //   console.log(MMO_Core_Player.Player["stats"],'stats')
-  // }
+    // if($gameActors["_data"][1] === undefined) return;
+
+    // let equips = [];
+    // for(var i = 0; i < $gameActors["_data"][1]["_equips"].length; i++) {
+    //   equips.push($gameActors["_data"][1]["_equips"][i]["_itemId"])
+    // }
+
+    // MMO_Core.socket.emit("player_update_stats", {
+    //   hp: $gameActors["_data"][1]["_hp"],
+    //   mp: $gameActors["_data"][1]["_mp"],
+    //   equips: equips,
+    //   skills: $gameActors["_data"][1]["_skills"],
+    //   level: $gameActors["_data"][1]["_level"],
+    //   exp: $gameActors["_data"][1]["_exp"],
+    //   classId: 2,
+    //   gold: $gameParty["_gold"],
+    //   items: $gameParty["_items"],
+    //   armors: $gameParty["_armors"],
+    //   weapons: $gameParty["_weapons"]
+    // });
+    // console.log(MMO_Core_Player.Player["stats"],'stats')
+  }
 
   MMO_Core_Player.getPlayerPos = function() {
     return {

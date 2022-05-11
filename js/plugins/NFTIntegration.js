@@ -199,41 +199,30 @@ BlockChainMenu_Integration.prototype.WalletWindow = function() {
       }
     }
 
-    // const callNFTTest = async () => {
-    //     const sLegacyLegendBalance = 50
-    //     document.getElementById("nfts").innerHTML = ""
-    //     document.getElementById("nfts").style = "display: flex; flex-wrap: wrap !important; gap: 1.75rem; padding: 1.75rem; align-items: center; justify-content: center;"
-    //     document.getElementById("total-balance").innerHTML = `You have a total of ${sLegacyLegendBalance} Soul Legacy Legend NFTs.`;
+    const callNFTTest = async () => {
+        console.log(MMO_Core_Player.Player, 'first callllllll');
+        const sLegacyLegendBalance = 50
+        document.getElementById("nfts").innerHTML = ""
+        document.getElementById("nfts").style = "display: flex; flex-wrap: wrap !important; gap: 1.75rem; padding: 1.75rem; align-items: center; justify-content: center;"
+        document.getElementById("total-balance").innerHTML = `You have a total of ${sLegacyLegendBalance} Soul Legacy Legend NFTs.`;
     
-    //     for(let i = 0; i < sLegacyLegendBalance; i++) {
-    //       const sLegacyLegendTokenElement = document.getElementById("nft_template").content.cloneNode(true)
-    //       sLegacyLegendTokenElement.querySelector("p").innerText = `Soul Legacy Legend #${i+1}`
-    //       sLegacyLegendTokenElement.querySelector("a").href = `https://opensea.io/assets/0x9e9e4a52e25774cb9d234170a5a5c3d7af387a12/${i+1}`
-    //       sLegacyLegendTokenElement.querySelector("img").src = `https://lh3.googleusercontent.com/TDTBAzyDcpffGBfGPX4AlplxXD7Q5m8GmEQvOJa_UddoySIMfmekuhy6qmsNzp3Zv6wJhbQElJ_ARadLJx7lrX-rTuyNfDlTbV-4Bg=s0`
-    //       sLegacyLegendTokenElement.querySelector("img").alt = `empty`
-    //       sLegacyLegendTokenElement.getElementById("load_button_nft").addEventListener("click", consoles);
-    //       document.getElementById("nfts").append(sLegacyLegendTokenElement)
-    //     }
-    //   }
+        for(let i = 0; i < sLegacyLegendBalance; i++) {
+          const sLegacyLegendTokenElement = document.getElementById("nft_template").content.cloneNode(true)
+          sLegacyLegendTokenElement.querySelector("p").innerText = `Soul Legacy Legend #${i+1}`
+          sLegacyLegendTokenElement.querySelector("a").href = `https://opensea.io/assets/0x9e9e4a52e25774cb9d234170a5a5c3d7af387a12/${i+1}`
+          sLegacyLegendTokenElement.querySelector("img").src = `https://lh3.googleusercontent.com/TDTBAzyDcpffGBfGPX4AlplxXD7Q5m8GmEQvOJa_UddoySIMfmekuhy6qmsNzp3Zv6wJhbQElJ_ARadLJx7lrX-rTuyNfDlTbV-4Bg=s0`
+          sLegacyLegendTokenElement.querySelector("img").alt = `empty`
+          sLegacyLegendTokenElement.getElementById("load_button_nft").addEventListener("click", consoles);
+          document.getElementById("nfts").append(sLegacyLegendTokenElement)
+        }
+      }
 
     const consoles = async () => {
-        console.log('finally');
         // GET AND EDIT PLAYER DETAILS SKIN
         console.log(MMO_Core_Player.Player, 'first');
 
         MMO_Core_Player.updateSkin({type: "sprite", characterName: 'Actor3', characterIndex: 0})   
-        // MMO_Core_Player.savePlayerClass({type: "class", classId: 2})   
-        MMO_Core_Players.refreshPlayersOnMap();
-
-        // END EDIT PLAYER DETAILS SKIN
-    }
-    const consoles2 = async () => {
-        console.log('finally2');
-        // GET AND EDIT PLAYER DETAILS SKIN
-        console.log(MMO_Core_Player.Player, 'first');
-
-        MMO_Core_Player.updateSkin({type: "sprite", characterName: 'Male1', characterIndex: 0})   
-        // MMO_Core_Player.savePlayerClass({type: "class", classId: 2})   
+        MMO_Core_Player.savePlayerClass({type: "class", classId: 2})   
         MMO_Core_Players.refreshPlayersOnMap();
 
         // END EDIT PLAYER DETAILS SKIN
@@ -253,7 +242,7 @@ BlockChainMenu_Integration.prototype.WalletWindow = function() {
       showAccount.innerHTML = account;
     }
 
-    document.getElementById("load_nft_list").addEventListener("click", callNFT)
+    document.getElementById("load_nft_list").addEventListener("click", callNFTTest)
     // })
     // END of Javascript NFT Integration Calls
 }
