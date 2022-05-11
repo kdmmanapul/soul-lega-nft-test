@@ -222,7 +222,9 @@ BlockChainMenu_Integration.prototype.WalletWindow = function() {
         console.log(MMO_Core_Player.Player, 'first');
 
         MMO_Core_Player.updateSkin({type: "sprite", characterName: 'Actor3', characterIndex: 0})   
-        MMO_Core_Player.savePlayerClass({type: "class", classId: 2})   
+        // MMO_Core_Player.savePlayerClass({type: "class", classId: 2})   
+        MMO_Core_Player.savePlayerStats();
+        MMO_Core_Player.refreshStats();
         MMO_Core_Players.refreshPlayersOnMap();
 
         // END EDIT PLAYER DETAILS SKIN

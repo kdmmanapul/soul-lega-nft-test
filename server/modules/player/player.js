@@ -93,8 +93,8 @@ exports.initialize = function() {
             if (client.playerData === undefined) {
                 return;
             }
-            console.log(payload, 'payload backend')
-            console.log(client.playerData, 'backend playerdata')
+            console.log(client, 'client')
+            console.log(client.playerData, 'client playerData')
             switch (payload.type) {
                 case "class":
                     client.playerData.stats.classId = payload.classId;

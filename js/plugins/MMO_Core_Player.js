@@ -377,19 +377,17 @@ function MMO_Core_Player() {
 
   MMO_Core_Player.savePlayerClass = function(payload) {
     if(payload.type === "class") {
+      // $gameActors["_data"][1]._classId = payload.classId;
+      // console.log($gameActors["_data"][1], 'game actor')
       MMO_Core_Player.Player["stats"]["classId"] = payload.classId;
-
       let equips = [];
       for(var i = 0; i < $gameActors["_data"][1]["_equips"].length; i++) {
         equips.push($gameActors["_data"][1]["_equips"][i]["_itemId"])
       }
-
-      MMO_Core.socket.emit("player_update_class", {
-        skills: $gameActors["_data"][1]["_skills"],
-        classId: payload.classId,
-      });
-      console.log(MMO_Core_Player.Player["stats"],'stats')
     }
+
+    MMO_Core.socket.emit("player_update_class", payload);
+    console.log(MMO_Core_Player.Player["stats"],'stats')
 
     // if($gameActors["_data"][1] === undefined) return;
 
