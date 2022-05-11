@@ -90,9 +90,10 @@ exports.initialize = function() {
 
         // Client Update Player Class
         client.on("player_update_class", function(payload) {
-            if (client.playerDate === undefined) {
+            if (client.playerData === undefined) {
                 return;
             }
+            console.log(payload, 'payload backend')
             console.log(client.playerData, 'backend playerdata')
             switch (payload.type) {
                 case "class":
