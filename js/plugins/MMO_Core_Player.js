@@ -377,39 +377,16 @@ function MMO_Core_Player() {
 
   MMO_Core_Player.savePlayerClass = function(payload) {
     if(payload.type === "class") {
-      // $gameActors["_data"][1]._classId = payload.classId;
-      // console.log($gameActors["_data"][1], 'game actor')
+      $gameActors.actor(1).changeClass(payload.classId);
+      $gameActors.actor(1).initSkills();
+      $gameActors.actor(1).initEquips(payload.equips);
       MMO_Core_Player.Player["stats"]["classId"] = payload.classId;
-      let equips = [];
-      for(var i = 0; i < $gameActors["_data"][1]["_equips"].length; i++) {
-        equips.push($gameActors["_data"][1]["_equips"][i]["_itemId"])
-      }
     }
 
     MMO_Core.socket.emit("player_update_class", payload);
-    console.log(MMO_Core_Player.Player["stats"],'stats')
-
-    // if($gameActors["_data"][1] === undefined) return;
-
-    // let equips = [];
-    // for(var i = 0; i < $gameActors["_data"][1]["_equips"].length; i++) {
-    //   equips.push($gameActors["_data"][1]["_equips"][i]["_itemId"])
-    // }
-
-    // MMO_Core.socket.emit("player_update_stats", {
-    //   hp: $gameActors["_data"][1]["_hp"],
-    //   mp: $gameActors["_data"][1]["_mp"],
-    //   equips: equips,
-    //   skills: $gameActors["_data"][1]["_skills"],
-    //   level: $gameActors["_data"][1]["_level"],
-    //   exp: $gameActors["_data"][1]["_exp"],
-    //   classId: 2,
-    //   gold: $gameParty["_gold"],
-    //   items: $gameParty["_items"],
-    //   armors: $gameParty["_armors"],
-    //   weapons: $gameParty["_weapons"]
-    // });
     // console.log(MMO_Core_Player.Player["stats"],'stats')
+    // console.log(MMO_Core_Player.Player,'player')
+    // console.log($gameActors["_data"][1]["_equips"], 'equips')
   }
 
   MMO_Core_Player.getPlayerPos = function() {

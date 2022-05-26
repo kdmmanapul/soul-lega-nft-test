@@ -45,8 +45,9 @@ BlockChainMenu_Integration.prototype.create = function() {
 BlockChainMenu_Integration.prototype.update = function() {
     if (Input.isTriggered("cancel")) {
         htmlEmpty = ``;
-        SceneManager.pop();
         document.getElementById('text_zone').innerHTML = htmlEmpty;
+        // document.getElementById("nft_template").content = htmlEmpty;
+        SceneManager.pop();
     }
 }
 
@@ -186,6 +187,7 @@ BlockChainMenu_Integration.prototype.WalletWindow = function() {
         }
         
         const tokenMetadata = await fetch(tokenMetadataURI).then((response) => response.json())
+        // console.log(tokenMetadata, 'asd')
         if (document.getElementById("nft_template")) {
             const sLegacyLegendTokenElement = document.getElementById("nft_template").content.cloneNode(true)
             sLegacyLegendTokenElement.querySelector("p").innerText = tokenMetadata["name"]
@@ -193,7 +195,7 @@ BlockChainMenu_Integration.prototype.WalletWindow = function() {
             sLegacyLegendTokenElement.querySelector("img").src = `https://soullegacy.mypinata.cloud/ipfs/${tokenMetadata["image"].split("ipfs://")[1]}`
             sLegacyLegendTokenElement.querySelector("img").alt = tokenMetadata["description"]
 
-            sLegacyLegendTokenElement.getElementById("load_button_nft").addEventListener("click", consoles);
+            sLegacyLegendTokenElement.getElementById("load_button_nft").addEventListener("click", () => useNftData(tokenMetadata));
             document.getElementById("nfts").append(sLegacyLegendTokenElement)
         }
       }
@@ -212,20 +214,81 @@ BlockChainMenu_Integration.prototype.WalletWindow = function() {
           sLegacyLegendTokenElement.querySelector("a").href = `https://opensea.io/assets/0x9e9e4a52e25774cb9d234170a5a5c3d7af387a12/${i+1}`
           sLegacyLegendTokenElement.querySelector("img").src = `https://lh3.googleusercontent.com/TDTBAzyDcpffGBfGPX4AlplxXD7Q5m8GmEQvOJa_UddoySIMfmekuhy6qmsNzp3Zv6wJhbQElJ_ARadLJx7lrX-rTuyNfDlTbV-4Bg=s0`
           sLegacyLegendTokenElement.querySelector("img").alt = `empty`
-          sLegacyLegendTokenElement.getElementById("load_button_nft").addEventListener("click", consoles);
+          sLegacyLegendTokenElement.getElementById("load_button_nft").addEventListener("click", () => consoles(i+1));
           document.getElementById("nfts").append(sLegacyLegendTokenElement)
         }
       }
 
-    const consoles = async () => {
-        // GET AND EDIT PLAYER DETAILS SKIN
-        console.log(MMO_Core_Player.Player, 'first');
+    const useNftData = async (nftData) => {
+        // GET AND EDIT PLAYER DETAILS BASED ON NFT ATTRIBUTES
+        console.log(nftData["edition"], 'nftID')
+        console.log(nftData["attributes"][11]["value"], 'nftClass')
+        console.log(nftData["attributes"][10]["value"], 'nftAura')
+        console.log(nftData["attributes"], 'attributes')
 
-        MMO_Core_Player.updateSkin({type: "sprite", characterName: 'Actor3', characterIndex: 0})   
-        // MMO_Core_Player.savePlayerClass({type: "class", classId: 2})   
-        MMO_Core_Player.savePlayerStats();
+        // Changing Avatar Sprite
+        if (nftData) {
+            MMO_Core_Player.updateSkin({type: "sprite", characterName: `SL-${nftData["edition"]}`, characterIndex: 0});
+            MMO_Core_Player.updateSkin({type: "face", faceName: `Actor-${nftData["edition"]}`, faceIndex: 0});
+            MMO_Core_Player.updateSkin({type: "battler", battlerName: `SL-Battler-${nftData["edition"]}`});
+        }
+         
+        // Changing Avatar Class
+        switch (nftData["attributes"][11]["value"]) {
+            case "Mercenary":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 1, equips: [0,0,0,0,0]});
+                break;
+            case "Brawler":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 2, equips: [0,0,0,0,0]});
+                break;
+            case "Swordsman":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 3, equips: [0,0,0,0,0]});
+                break;
+            case "Mage":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 4, equips: [0,0,0,0,0]});
+                break;
+            case "Hunter":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 5, equips: [0,0,0,0,0]});
+                break;
+            case "Crafter":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 6, equips: [0,0,0,0,0]});
+                break;
+            case "Cleric":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 7, equips: [0,0,0,0,0]});
+                break;
+            case "Thief":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 8, equips: [0,0,0,0,0]});
+                break;
+            case "Assassin":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 9, equips: [0,0,0,0,0]});
+                break;
+            case "Lancer":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 10, equips: [0,0,0,0,0]});
+                break;
+            case "Ninja":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 11, equips: [0,0,0,0,0]});
+                break;
+            case "Dragon Slayer":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 12, equips: [0,0,0,0,0]});
+                break;
+            case "Jack":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 13, equips: [0,0,0,0,0]});
+                break;
+            case "Dragoon":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 14, equips: [0,0,0,0,0]});
+                break;
+            case "Grand Master":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 15, equips: [0,0,0,0,0]});
+                break;
+            case "Master Craftsman":
+                MMO_Core_Player.savePlayerClass({type: "class", classId: 16, equips: [0,0,0,0,0]});
+                break;
+        }
+
+        // Refresh Data on Game
         MMO_Core_Player.refreshStats();
         MMO_Core_Players.refreshPlayersOnMap();
+        // $gameTemp.reserveCommonEvent(58)
 
         // END EDIT PLAYER DETAILS SKIN
     }
@@ -244,7 +307,7 @@ BlockChainMenu_Integration.prototype.WalletWindow = function() {
       showAccount.innerHTML = account;
     }
 
-    document.getElementById("load_nft_list").addEventListener("click", callNFTTest)
+    document.getElementById("load_nft_list").addEventListener("click", callNFT)
     // })
     // END of Javascript NFT Integration Calls
 }

@@ -2,7 +2,7 @@
 null,
 {"id":1,"expanded":true,"name":"MapIslandOfSky","order":2,"parentId":0,"scrollX":1530,"scrollY":845},
 {"id":2,"expanded":true,"name":"MapWhitelistMap","order":3,"parentId":1,"scrollX":1530,"scrollY":845},
-{"id":3,"expanded":true,"name":"PlayerHub","order":5,"parentId":0,"scrollX":2126,"scrollY":2451},
+{"id":3,"expanded":true,"name":"PlayerHub","order":5,"parentId":0,"scrollX":3818.1818181818185,"scrollY":2406.5454545454545},
 {"id":4,"expanded":true,"name":"PlayerHub-WIP","order":4,"parentId":0,"scrollX":2964,"scrollY":2055.6},
 {"id":5,"expanded":false,"name":"Forest","order":8,"parentId":3,"scrollX":1530,"scrollY":845},
 {"id":6,"expanded":true,"name":"Cave","order":6,"parentId":3,"scrollX":1530,"scrollY":845},
